@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "authentic"
+version = "0.1.0"
+description = "REST authentication for django apps."
+authors = ["Igor Lopes <igor.lop.r@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+djangorestframework = "^3.14.0"
+django = "^5.0.2"
+djangorestframework-simplejwt = "^5.3.1"
+django-templated-mail = "^1.1.1"
+pyright = "^1.1.352"
+beautifulsoup4 = "^4.12.3"
+
+
+[tool.poetry.group.dev.dependencies]
+environs = "^10.3.0"
+django-extensions= "^3.2.3"
+black = "^24.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

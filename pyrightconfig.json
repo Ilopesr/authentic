@@ -1,0 +1,16 @@
+{
+  "exclude": [
+    ".venv"
+  ],
+  "venvPath": ".\\.venv\\",
+  "reportTypeshedErrors": false,
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "executionEnvironments": [
+    {
+      "pythonPlataform": "Windows",
+      "root": ".\\",
+      "venv": ".\\",
+    }
+  ]
+}
