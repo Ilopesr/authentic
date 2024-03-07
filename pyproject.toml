@@ -13,10 +13,10 @@ django = "^5.0.2"
 djangorestframework-simplejwt = "^5.3.1"
 django-templated-mail = "^1.1.1"
 pyright = "^1.1.352"
-beautifulsoup4 = "^4.12.3"
 
 
 [tool.poetry.group.dev.dependencies]
+beautifulsoup4 = "^4.12.3"
 environs = "^10.3.0"
 django-extensions= "^3.2.3"
 black = "^24.2.0"
