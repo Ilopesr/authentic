@@ -6,14 +6,17 @@ Authentic, é uma bibliotéca de authenticaçã para utilizar com django rest fr
 
 # :paperclip: Endpoints
 
-### Autenticação
 
+O endpoint de autenticação "/entrar/" ao ser validado pelos dados corretos
+via uma função de autentificação personalizada, adiciona automáticamente 
+ao seu navegador, as chaves ["access","refresh"], o qual 
+deve receber a autentificação das views com um Bearer token.
 
 
 ```js
 # POST /entrar/
 {
-    "auth_user_username": str
+    "USERNAME_FIELD": str
     "password": str
 }
 
@@ -48,12 +51,3 @@ Authentic, é uma bibliotéca de authenticaçã para utilizar com django rest fr
     "access": str,
 }
 ```
-
-
-### Criação
-
-```js
-# GET /contas/
-{
-    
-}
