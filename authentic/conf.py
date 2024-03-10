@@ -63,8 +63,8 @@ default_settings = {
     "SERIALIZERS": ObjDict(
         {
             "user": "authentic.serializers.UserSerializer",
-            "user_create": "authentic.serializers.UserCreateSerializer",
-            "user_create_retype": "authentic.serializers.UserCreatePasswordRetypeSerializer",
+            "registration": "authentic.serializers.UserCreateSerializer",
+            "registration_retype": "authentic.serializers.UserCreatePasswordRetypeSerializer",
             "activation": "authentic.serializers.UidTokenActivationSerializer",
             "resend_activation": "authentic.serializers.ResendActivationEmailSerializer",
             "recover_password": "authentic.serializers.RecoverPasswordSerializer",
@@ -77,7 +77,7 @@ default_settings = {
             "user": [
                 "authentic.permissions.CurrentUserOrAdmin",
             ],
-            "create": ["rest_framework.permissions.AllowAny"],
+            "registration": ["rest_framework.permissions.AllowAny"],
             "activation": ["rest_framework.permissions.AllowAny"],
             "resend_activation": ["rest_framework.permissions.AllowAny"],
             "recover_password": ["rest_framework.permissions.AllowAny"],
@@ -90,14 +90,6 @@ default_settings = {
                 "authentic.authentication.authenticator.AuthenticJWTAuthentication",
             ],
         },
-    ),
-    "ALLOWED_HTTP_METHODS": ObjDict(
-        {
-            "get": ["get"],
-            "post": ["post"],
-            "delete": ["delete"],
-            "patch": ["patch"],
-        }
     ),
 }
 
