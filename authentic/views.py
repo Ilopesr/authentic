@@ -24,8 +24,8 @@ class UserViewSet(viewsets.ModelViewSet):
         return queryset
 
     def get_permissions(self):
-        if self.action == "new_account":
-            self.permission_classes = settings.PERMISSIONS.create
+        if self.action == "register":
+            self.permission_classes = settings.PERMISSIONS.registration
         if self.action == "activation":
             self.permission_classes = settings.PERMISSIONS.activation
         if self.action == "resend_activation":
@@ -44,10 +44,10 @@ class UserViewSet(viewsets.ModelViewSet):
         self.get_http_methods_name()
         if self.action == "list":
             return settings.SERIALIZERS.user
-        if self.action == "new_account":
+        if self.action == "register":
             if settings.USER_CREATE_PASSWORD_RETYPE:
-                return settings.SERIALIZERS.user_create_retype
-            return settings.SERIALIZERS.user_create
+                return settings.SERIALIZERS.registration_retype
+            return settings.SERIALIZERS.registration
         if self.action == "activation":
             return settings.SERIALIZERS.activation
         if self.action == "resend_activation":
@@ -61,7 +61,7 @@ class UserViewSet(viewsets.ModelViewSet):
         return self.serializer_class
 
     @action(["post"], detail=False, url_path="criar")
-    def new_account(self, request, *args, **kwargs):
+    def register(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save(*args, **kwargs)
