@@ -25,6 +25,6 @@ jobs:
         with:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Configure PyPI Token
-        run: poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+        run: echo "pypi-token.pypi:${{ secrets.PYPI_TOKEN }}" > $HOME/.pypirc
       - name: Build and publish
         run: poetry publish --build --no-interaction
